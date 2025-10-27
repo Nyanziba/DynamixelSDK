@@ -146,7 +146,20 @@ ament_target_dependencies(read_write_position_arm_node
   rclcpp
   sensor_msgs
 )
-
+add_executable(read_write_position_salvador src/read_write_position_salvador.cpp)
+ament_target_dependencies(read_write_position_salvador
+  dynamixel_sdk_custom_interfaces
+  dynamixel_sdk
+  rclcpp
+  sensor_msgs
+)
+add_executable(read_write_position_restaurant src/read_write_position_restaurant.cpp)
+ament_target_dependencies(read_write_position_restaurant
+  dynamixel_sdk_custom_interfaces
+  dynamixel_sdk
+  rclcpp
+  sensor_msgs
+)
 ################################################################################
 # Install
 ################################################################################
@@ -165,6 +178,8 @@ install(TARGETS
   pub_read_position_node
   read_write_velocity_arm_node
   read_write_position_six_node
+  read_write_position_salvador
+  read_write_position_restaurant
   DESTINATION lib/${PROJECT_NAME}
 )
 
